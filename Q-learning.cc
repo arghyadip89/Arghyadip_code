@@ -510,9 +510,8 @@ void MyCallbackDep_voice (uint16_t handle)
 //        if (p<pow(log(s+3),-1))
         {
                 t=cardinality_action*drand48() ;
-                macFile2 << "ogo ttttt: " << t << "\n";
                 t=ceil(t);
-                macFile2<< "ogo ttttt: " << t << "\n";
+                
                 concat_action=feasible_action_set[datauser_wifi][voiceuser][datauser_lte][3];
                
                 macFile2 << "exploration concat action: " << concat_action << "\n";
@@ -541,14 +540,14 @@ void MyCallbackDep_voice (uint16_t handle)
                 {
                         uint16_t action_temp=concat_action % 10;
                         concat_action=concat_action / 10;
-                        macFile2 <<   "ami baire \n";
-                        macFile2 << "mago action value: " << state_action_Q_value[datauser_wifi][voiceuser][datauser_lte][3][action_temp] << "\n";
+                        
+                        macFile2 << " action value: " << state_action_Q_value[datauser_wifi][voiceuser][datauser_lte][3][action_temp] << "\n";
                         if(t<=state_action_Q_value[datauser_wifi][voiceuser][datauser_lte][3][action_temp])
                         {
                                 t= state_action_Q_value[datauser_wifi][voiceuser][datauser_lte][3][action_temp];
                                 action=action_temp;
                                  action_old=action;
-                            macFile2 <<   "ami bhetore \n";
+                            
                         }
                 }
         macFile2 << "exploit action1: " << action << "\n";
@@ -643,9 +642,7 @@ void MyCallbackDep_data_lte (uint16_t handle)
        // if (p<pow(log(s+3),-1))
         {
                 t=cardinality_action*drand48() ;
-macFile2<< "ogo ttttt: " << t << "\n";
                 t=ceil(t);
-macFile2 << "ogo ttttt: " << t << "\n";
                 concat_action=feasible_action_set[datauser_wifi][voiceuser][datauser_lte][4];
                std::cout << "explore" << std::endl;
                 macFile2 << "exploration concat action: " << concat_action << "\n";
@@ -771,9 +768,7 @@ void MyCallbackDep_data_wifi (uint16_t handle)
         //if (p<pow(log(s+3),-1))
         {
                 t=cardinality_action*drand48() ;
-macFile2 << "ogo ttttt: " << t << "\n";
                 t=ceil(t);
-macFile2 << "ogo ttttt: " << t << "\n";
                 concat_action=feasible_action_set[datauser_wifi][voiceuser][datauser_lte][5];
             
                macFile2 << "exploration concat action: " << concat_action << "\n";
@@ -1164,9 +1159,7 @@ void Q_learning (uint16_t index,double stime, double etime)
  //       if (p<pow(log(s+3),-1))
         {
                 t=cardinality_action*drand48() ;
-macFile2 << "ogo ttttt: " << t << "\n";
                 t=ceil(t);
-macFile2 << "ogo tttt: " << t << "\n";
                macFile2 << " voice=: " << voiceuser <<" data_lte=: " << datauser_lte <<" data_wifi= " << datauser_wifi << "index="<< index <<" \n";//added
                 concat_action=feasible_action_set[datauser_wifi][voiceuser][datauser_lte][index];
                 macFile2 << "concat action: " << concat_action << "\n";
@@ -1564,7 +1557,7 @@ macFile4.open ("event_throughput_1_2_time_beta_revised.txt");
  // std::cout << "count1"<< count1 <<  "ami ekhane \n";
  }
   //std::cout <<   "ami ekhaneo \n";
-  macFile2 << "omg"<< feasible_action_set[0][1][0][1] <<  "ami age \n";
+  macFile2 << "set"<< feasible_action_set[0][1][0][1] <<  " \n";
 }
                    
 // std::cout << "i:" <<i<<"j:"<<j<<"k:"<<k<<"index:"<<index<<"ami out" \n";                   
@@ -2007,7 +2000,7 @@ macFile2 << "Average Throughput: " << (average_th/count)<< "\n";
 macFile2 << "Average PU Throughput: " << (average_pu_th/count)<< "\n";
 macFile2 << "blocked calls: " <<block<< "\n";
 macFile2 << "blocked calls including all: " <<block_all<< "\n";
-macFile2 << "-1 unconstrained Blocking fraction lambdav=1/80 1000 s: " << (block/voice_count)<< "\n";
+macFile2 << "Blocking fraction lambdav=1/80 1000 s: " << (block/voice_count)<< "\n";
 
 double   action_opt,t1;
 uint32_t visito=0;
